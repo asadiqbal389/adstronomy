@@ -1,0 +1,106 @@
+<template name="userInfo">
+	<img {{profileUrl}} class="ads-avatar" id="profUrl">
+		<div class="ads-avatar-dropdown">
+      <span>{{currentUser.profile.name}}</span>
+      <div class="mdl-layout-spacer"></div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon logout">
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </div>
+</template>
+
+<template name="loginbtnSoc">
+	<div class="demo-grid-ruler mdl-grid social-btn">
+		<div class="mdl-cell mdl-cell--12-col login-text">
+	  	<h1><span class="sign-up">Login With</span></h1>
+	  </div>
+		<div class="mdl-cell mdl-cell--6-col">
+	  	<a href="#" class="log-twitter btn-facebook"><i class="fa fa-facebook-square fa-4x"></i></a>
+	  </div>
+	  <div class="mdl-cell mdl-cell--6-col">
+	  	<a href="#" class="log-twitter btn-google"><i class="fa fa-google-plus-square fa-4x"></i></a>
+	  </div>
+  </div>
+</template>
+<template name="uploadBtn">
+	<a class="mdl-navigation__link urlUpload"><i class="mdl-color-text--blue-grey-400 material-icons">file_upload</i>Upload</a>
+</template>
+<template name="catCards">
+	<div class="mdl-card on-the-road-again mdl-cell mdl-cell--11-col">
+    <div class="mdl-card__media">
+    	{{> carousel}}
+      <!--h3><a href="entry.html">On the road again</a></h3-->
+    </div>
+    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+      <div class="minilogo"></div>
+      <div>
+        <strong>Recently Added</strong>
+        <!--span>2 days ago</span-->
+      </div>
+      <button class="mdl-button mdl-js-button mdl-button--primary" style="float:right;font-size: 9px;">
+			  View all
+			</button>
+    </div>
+  </div>
+</template>
+<template name="uploadModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <header class="ads-header mdl-layout__header mdl-color--grey-100 mdl-color-text--white ads-header">
+						        <div class="mdl-layout__header-row" style="padding-left:14px;">
+						          <span class="mdl-layout-title">
+						          	<img src="./adslogo.png" class="ads-logo"> Adstronomy
+						          </span>
+						          <div class="mdl-layout-spacer"></div>
+						       </div>
+						      </header>
+                </div>
+
+                <div class="modal-body">
+                    <section class="content bgcolor-1">
+	      						<h5 class="erroUrl"></h5>
+										<span class="input input--fumi">
+											<input class="input__field input__field--fumi" type="text" id="videoUrl" />
+											<label class="input__label input__label--fumi" for="input-23">
+												<i class="fa fa-youtube-square icon icon--fumi"></i>
+												<span class="input__label-content input__label-content--fumi">Url</span>
+											</label>
+										</span>
+										<span class="input input--fumi">
+											<input class="input__field input__field--fumi" type="text" id="videoDes" />
+											<label class="input__label input__label--fumi" for="input-23">
+												<i class="fa fa-info icon icon--fumi"></i>
+												<span class="input__label-content input__label-content--fumi">Description</span>
+											</label>
+										</span>
+										<div class="box bg-1">
+											<button class="button button--wayra button--border-thick button--text-upper button--size-s urlSubmit" >Submit</button>
+										</div>
+									</section>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+<template name="carousel">  
+  <div id="carousel">
+
+	</div>
+</template>
+<!--template name="getThumbnails">
+	<div><img src="./road.jpg" /></div>
+  <div><img src="./road.jpg"  /></div>
+  <div><img src="./road.jpg"/></div>
+  <div><img src="./road.jpg"/></div>
+  <div><img src="./road.jpg" /></div>
+  <div><img src="./road.jpg"/></div>
+    
+</template-->
