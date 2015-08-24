@@ -19,4 +19,4 @@ jquery
 peppelg:bootstrap-3-modal
 twbs:bootstrap
 udondan:slick
-autopublish
+iron:router
