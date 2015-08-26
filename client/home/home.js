@@ -1,5 +1,4 @@
-//Meteor.subscribe("vdoId");
-
+//Meteor.subscribe("vids");
 Template.carousel.rendered = function() {
   $('#carousel').slick({
     dots: false,
@@ -34,21 +33,34 @@ Template.carousel.rendered = function() {
 	  ]
   });
 }
-
 Meteor.call("getVdoId", function(error, vdoIdresults) {
-		for (var i = 0; i < vdoIdresults.length; i++) {
-    	getYou(vdoIdresults[i].videoid)
-    }
+	
+	for (var i = 0; i < vdoIdresults.length; i++) {
+		Session.set("vdo_id", vdoIdresults);
+		// getYouIds(vdoIdresults[i].videoid); 
+		// getRecentVid(vdoIdresults[i].videoid);
+  }
 });	
-getYou = function(vdo_id){
-	Meteor.http.call("GET", "https://www.googleapis.com/youtube/v3/videos?id="+vdo_id+"&key=AIzaSyD8D4MCnpUg4MoO81jtZrqD58xDXguWqqk&part=snippet,statistics,contentDetails",
-	  function (error, youtubeinforesult) {
-	    if (!error) {
-	    	var youtubejson = JSON.parse(youtubeinforesult.content);
-	    	//youtubejson.items[0].snippet.thumbnails.medium.url;
-	    	
-	    	$(".slick-track").append("<div class=\"slick-slide slick-active\"><img src=\""+youtubejson.items[0].snippet.thumbnails.medium.url+"\"></div>");
-	    	//$(".slick-track").append("<div><img src=\""+youtubejson.items[0].snippet.thumbnails.medium.url+"\" /></div>");
-     	}
-  });
-}
+Template.getThumbnails.helpers({
+  getYouIds: function() {
+   		//console.log("ids 2"+Session.get("vdo_id")); 
+  		// Meteor.http.call("GET", "https://www.googleapis.com/youtube/v3/videos?id="+vdoe_id+"&key="+Meteor.settings.public.youtubeApiKey+"&part=snippet,statistics,contentDetails",
+			 //  function (error, youtubeinforesult) {
+			 //    if (!error) {
+			 //    	var youtubejson = JSON.parse(youtubeinforesult.content);
+			 //    	console.log("youtubejson "+youtubejson);
+			 //    	return youtubejson;
+			 //    	//$(".slick-track").append("<div class=\"slick-slide slick-active\"><img src=\""+youtubejson.items[0].snippet.thumbnails.medium.url+"\"></div>");
+			 //    }
+		  // });
+  }
+});
+// getYou = function(vdo_id){
+// 	Meteor.http.call("GET", "https://www.googleapis.com/youtube/v3/videos?id="+vdo_id+"&key="+Meteor.settings.public.youtubeApiKey+"&part=snippet,statistics,contentDetails",
+// 	  function (error, youtubeinforesult) {
+// 	    if (!error) {
+// 	    	var youtubejson = JSON.parse(youtubeinforesult.content);
+// 	    	$(".slick-track").append("<div class=\"slick-slide slick-active\"><img src=\""+youtubejson.items[0].snippet.thumbnails.medium.url+"\"></div>");
+// 	    }
+//   });
+// }

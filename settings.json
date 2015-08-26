@@ -1,3 +1,5 @@
 {
-	"youtubeApiKey": "AIzaSyD8D4MCnpUg4MoO81jtZrqD58xDXguWqqk"
-}
+	"public":{
+							"youtubeApiKey": "AIzaSyD8D4MCnpUg4MoO81jtZrqD58xDXguWqqk"
+						}
+}		

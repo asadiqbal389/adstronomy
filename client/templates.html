@@ -1,3 +1,22 @@
+<template name="header">
+	<header class="ads-header mdl-layout__header mdl-color--grey-100 mdl-color-text--white ads-header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">
+          	<img src="./adslogo.png" class="ads-logo"> Adstronomy
+          </span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search" />
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+       </div>
+      </header>
+</template>
 <template name="userInfo">
 	<img {{profileUrl}} class="ads-avatar" id="profUrl">
 		<div class="ads-avatar-dropdown">
@@ -8,7 +27,6 @@
       </button>
     </div>
 </template>
-
 <template name="loginbtnSoc">
 	<div class="demo-grid-ruler mdl-grid social-btn">
 		<div class="mdl-cell mdl-cell--12-col login-text">
@@ -37,9 +55,11 @@
         <strong>Recently Added</strong>
         <!--span>2 days ago</span-->
       </div>
-      <button class="mdl-button mdl-js-button mdl-button--primary" style="float:right;font-size: 9px;">
-			  View all
-			</button>
+     <a href="/recently-added">
+				<button class="mdl-button mdl-js-button mdl-button--primary recent" style="float:right;font-size: 9px;">
+				  View all
+				</button>
+			</a>
     </div>
   </div>
 </template>
@@ -103,15 +123,11 @@
 </template>
 <template name="carousel">  
   <div id="carousel">
-
+  		<!-- {{#each getYouIds}}
+  			{{>getThumbnails}}
+  		{{/each}} -->
 	</div>
 </template>
-<!--template name="getThumbnails">
-	<div><img src="./road.jpg" /></div>
-  <div><img src="./road.jpg"  /></div>
-  <div><img src="./road.jpg"/></div>
-  <div><img src="./road.jpg"/></div>
-  <div><img src="./road.jpg" /></div>
-  <div><img src="./road.jpg"/></div>
-    
-</template-->
+<template name="getThumbnails">
+	<!--div><img src="{{youtubejson.items[0].snippet.thumbnails.medium.url}}"/></div-->
+</template>

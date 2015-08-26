@@ -1,26 +1,6 @@
-<head>
-  <title>Adstronomy</title>
-</head>
-
-<body>
+<template name="homemain">
   <div class="ads-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="ads-header mdl-layout__header mdl-color--grey-100 mdl-color-text--white ads-header">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">
-          	<img src="./adslogo.png" class="ads-logo"> Adstronomy
-          </span>
-          <div class="mdl-layout-spacer"></div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search" />
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
-            </div>
-          </div>
-       </div>
-      </header>
+      {{>header}}
       <div class="ads-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="ads-drawer-header">
 	        {{#if currentUser }}
@@ -33,15 +13,13 @@
         {{#if currentUser }}
           {{>uploadBtn}}
         {{/if}}  
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">home</i>Home</a>
+          <a class="mdl-navigation__link" href="/"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>Home</a>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons">help_outline</i></a>
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100 ads-main">
-        {{>catCards}}
+        {{>yield}}
       </main>
     </div>
-    
-</body>
-
+</template>

@@ -20,3 +20,4 @@ peppelg:bootstrap-3-modal
 twbs:bootstrap
 udondan:slick
 iron:router
+reactive-var
